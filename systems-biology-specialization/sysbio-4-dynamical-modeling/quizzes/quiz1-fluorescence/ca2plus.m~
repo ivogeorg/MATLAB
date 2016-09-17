@@ -1,0 +1,11 @@
+% load data
+data = imread('flash4.jpg', 'jpg');
+
+% transpose and reorder
+data = data';
+data = data(512:-1:1, :);
+
+% divide into flash and no flash, and average
+data_flash = data(235:297, :);
+flash = mean(data_flash);
+data_noflash = 
